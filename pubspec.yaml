@@ -4,13 +4,13 @@ version: 0.0.1
 homepage: https://temp.com
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.12.0"
   flutter: ">=2.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  dio: 4.0.4                          # W, https://pub.dev/packages/dio   old:3.0.10
+  dio: ^4.0.6                          # W, https://pub.dev/packages/dio   old:3.0.10
 
 dev_dependencies:
   flutter_test:
