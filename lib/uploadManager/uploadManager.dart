@@ -2,8 +2,8 @@ import 'dart:async';
 import 'dart:collection';
 import 'dart:io';
 import 'dart:math';
-import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
+import 'package:dio/io.dart';
 import 'package:http_parser/http_parser.dart';
 
 class UploadManager {
@@ -37,7 +37,7 @@ class UploadManager {
   {
     _initial();
     _options = new BaseOptions(
-      connectTimeout: 90000,
+      connectTimeout: Duration(seconds: 90),
     );
   }
 
@@ -159,7 +159,7 @@ class UploadManager {
     _cancelLinker[item._id] = ct;
 
     if (_useProxy && _proxyUrl != null) {
-      (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate = (client) {
+      (dio.httpClientAdapter as IOHttpClientAdapter).onHttpClientCreate = (client) {
         client.findProxy = (uri) {
           //return 'PROXY 95.174.67.50:18080';
           return 'PROXY $_proxyUrl';
