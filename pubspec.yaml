@@ -1,6 +1,6 @@
 name: iris_download_manager
 description: A download & upload manager.
-version: 0.0.2
+version: 0.0.3
 homepage: https://temp.com
 
 environment:
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  dio: 5.0.1                          # W, https://pub.dev/packages/dio   old:3.0.10
+  dio: ^5.0.2                          # W, https://pub.dev/packages/dio   old:3.0.10
 
 dev_dependencies:
   flutter_test:
