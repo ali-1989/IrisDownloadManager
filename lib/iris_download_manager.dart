@@ -1,5 +1,4 @@
 library iris_download_manager;
 
-class Main {
-
-}
+export 'package:iris_download_manager/downloadManager/downloadManager.dart';
+export 'package:iris_download_manager/uploadManager/uploadManager.dart';

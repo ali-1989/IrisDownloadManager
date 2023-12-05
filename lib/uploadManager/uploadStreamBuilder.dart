@@ -1,6 +1,6 @@
 import 'dart:async';
-import '../uploadManager/uploadManager.dart';
 import 'package:flutter/material.dart';
+import 'package:iris_download_manager/iris_download_manager.dart';
 
 class UploadStreamBuilder<ui extends UploadItem> extends StatefulWidget {
 	final Stream<ui> stream;

@@ -202,7 +202,7 @@ class UploadManager {
         final data = response.data;
 
         // canceled by user
-        if (data is DioError && CancelToken.isCancel(data)) {
+        if (data is DioException && CancelToken.isCancel(data)) {
           item._state = UploadState.none;
           _cancelItem(item, null);
         }
@@ -221,7 +221,7 @@ class UploadManager {
 		});
 
     f = f.catchError((e) {
-      if (e is DioError && CancelToken.isCancel(e)) {
+      if (e is DioException && CancelToken.isCancel(e)) {
         item._state = UploadState.none;
         _cancelItem(item, null);
         return;
