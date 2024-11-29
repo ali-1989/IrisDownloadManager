@@ -193,7 +193,8 @@ class DownloadManager {
     _cancelLinker[item._id] = ct;
 
     if (_useProxy && _proxyUrl != null) {
-      (dio.httpClientAdapter as IOHttpClientAdapter).onHttpClientCreate = (client) {
+      (dio.httpClientAdapter as IOHttpClientAdapter).createHttpClient = () {
+        final client = HttpClient();
         client.findProxy = (uri) {
           //return 'PROXY 95.174.67.50:18080';
           return 'PROXY $_proxyUrl';
